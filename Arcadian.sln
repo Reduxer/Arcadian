@@ -7,11 +7,17 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Arcadian.SPA", "Arcadian.SP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcadian.Domain", "Src\Core\Arcadian.Domain\Arcadian.Domain.csproj", "{B537E6D1-8479-43BA-89D3-F9D7133D070A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcadian.Application", "Src\Core\Arcadian.Application\Arcadian.Application.csproj", "{D512B578-27C2-42B3-A338-F1A9422A5F66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcadian.Application", "Src\Core\Arcadian.Application\Arcadian.Application.csproj", "{D512B578-27C2-42B3-A338-F1A9422A5F66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcadian.Data", "Src\Infrastructure\Arcadian.Data\Arcadian.Data.csproj", "{F27A5D3D-5DEE-498D-81F5-04D6BA098E23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcadian.Data", "Src\Infrastructure\Arcadian.Data\Arcadian.Data.csproj", "{F27A5D3D-5DEE-498D-81F5-04D6BA098E23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcadian.WebAPI", "Src\Presentation\Arcadian.WebAPI\Arcadian.WebAPI.csproj", "{C841060F-7CD2-40A7-97F4-E815D5CB91C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcadian.WebAPI", "Src\Presentation\Arcadian.WebAPI\Arcadian.WebAPI.csproj", "{C841060F-7CD2-40A7-97F4-E815D5CB91C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{537C2C3A-E140-4B7F-88DA-D6D9D3E45441}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B384746B-C225-42A8-9D2C-C8EC1DDE399A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{BA65B8F7-C7EC-48FA-9F20-F0CBB423AF45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +50,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B537E6D1-8479-43BA-89D3-F9D7133D070A} = {537C2C3A-E140-4B7F-88DA-D6D9D3E45441}
+		{D512B578-27C2-42B3-A338-F1A9422A5F66} = {537C2C3A-E140-4B7F-88DA-D6D9D3E45441}
+		{F27A5D3D-5DEE-498D-81F5-04D6BA098E23} = {B384746B-C225-42A8-9D2C-C8EC1DDE399A}
+		{C841060F-7CD2-40A7-97F4-E815D5CB91C3} = {BA65B8F7-C7EC-48FA-9F20-F0CBB423AF45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5FA8D44-34A2-468D-BE8B-1FD66186EF5F}
