@@ -6,6 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddInfrastructureData(builder.Configuration);
 builder.Services.AddCoreApplication();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyHeader();
+        policy.AllowAnyMethod();
+        policy.AllowAnyOrigin();
+    });
+});
+
 builder.Services.AddControllers(options => {
     options.Filters.Add(new ApiExceptionFilter());
 });
@@ -21,6 +31,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 

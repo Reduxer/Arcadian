@@ -13,12 +13,12 @@ namespace Arcadian.WebAPI.Controllers
     {
         [HttpGet]
         [ProducesResponseType(typeof(TransactionsVM), StatusCodes.Status200OK)]
-        public async Task<ActionResult<TransactionsVM>> Index()
+        public async Task<ActionResult<TransactionsVM>> Index([FromQuery] GetTransactionsQuery transactionsQuery)
         {
-            return await Mediator.Send(new GetTransactionsQuery());
+            return await Mediator.Send(transactionsQuery);
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         [ProducesResponseType(typeof(TransactionsVM), StatusCodes.Status200OK)]
         public async Task<ActionResult<TransactionsVM>> Index(Guid id)
         {

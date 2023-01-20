@@ -1,0 +1,47 @@
+<form id="tform" [formGroup]="formGroup" (ngSubmit)="onFormSubmitted()">
+    <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>Transaction Information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="p-1">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-label>Transaction Name</mat-label>
+                        <input matInput type="text" id="tName" [formControl]="tNameInput" />
+                    </mat-form-field>
+                    <mat-error *ngIf="tNameInput.errors && (tNameInput.touched || tNameInput.dirty)">
+                        <i *ngIf="tNameInput.errors['required']">Transaction name is required</i>
+                    </mat-error>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-label>Cost</mat-label>
+                        <input matInput type="text" id="tCost" [formControl]="tCostInput" />
+                    </mat-form-field>
+                    <mat-error *ngIf="tCostInput.errors && (tCostInput.touched || tNameInput.dirty)">
+                        <i *ngIf="tCostInput.errors['required']">Cost is required</i>
+                        <i *ngIf="tCostInput.errors['numericOnly']">Cost can only contain numeric values</i>
+                    </mat-error>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-label>Date</mat-label>
+                        <input matInput [matDatepicker]="picker" id="tDate" [formControl]="tDateInput" />
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <mat-error *ngIf="tDateInput.errors && (tDateInput.touched || tDateInput.dirty)">
+                        <i *ngIf="tDateInput.errors['required']">Date is required</i>
+                    </mat-error>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions class="form-card-actions">
+            <button mat-flat-button class="mx-1" color="primary" type="submit" form="tform" [disabled]="formGroup.invalid || isFormSubmitting">Submit</button>
+            <button mat-flat-button class="mx-1" color="warn"  type="button" *ngIf="formMode === 'Update'"  (click)="onResetClicked()">Reset</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
